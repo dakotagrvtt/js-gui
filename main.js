@@ -1,4 +1,4 @@
-const add = (x, y) => { return x + y }
+const average = (x, y, z) => { return (x + y + z) / 3 }
 
 const validate = async (event) => {
   console.log(`triggered validate on ${event.target.id}`)
@@ -11,26 +11,18 @@ const validate = async (event) => {
   }
 }
 
+//check for valid input then
 const updateWithAdd = async (event) => {
   document.querySelector('#result').innerHTML = ''
-  if (document.querySelector('#firstNumber').checkValidity() && document.querySelector('#secondNumber').checkValidity()) {
-    const regex = /[^a-zA-Z_]/g
-    const s = document.querySelector('#guest').value.replace(regex, '')
-    const i = parseInt(document.querySelector('#firstNumber').value)
-    const j = parseInt(document.querySelector('#secondNumber').value)
-    const ans = `${s}, your sum is ${add(i, j)}.`
+  if (document.querySelector('#grade1').checkValidity() && document.querySelector('#grade2').checkValidity() && document.querySelector('#grade3').checkValidity()) {
+    const b = parseInt(document.querySelector('#grade1').value)
+    const b = parseInt(document.querySelector('#grade2').value)
+    const c = parseInt(document.querySelector('#grade3').value)
+    const ans = `Your average grade is is ${average(a, b, c)}.`
     document.querySelector('#result').innerHTML = ans
   }
 }
 
-const updateWithJoke = async (event) => {
-  document.querySelector('#result').innerHTML = ''
-  const url = 'https://api.icndb.com/jokes/random?limitTo=[nerdy]'
-  const response = await fetch(url)
-  const obj = await response.json()
-  const joke = obj.value.joke || 'No joke for you.'
-  document.querySelector('#result').innerHTML = joke
-}
 
 // delegate to dynamic elements (e.g. when testing)
 // focusout is like blur, but it bubbles up
