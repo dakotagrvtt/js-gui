@@ -4,8 +4,8 @@
 
 ## Links
 
-- [Demo](https://profcase.github.io/js-gui/)
-- [Source](https://github.com/profcase/js-gui)
+- [Demo](https://dakotagrvtt.github.io/js-gui/)
+- [Source](https://github.com/dakotagrvtt/js-gui)
 
 ## Requirements
 
